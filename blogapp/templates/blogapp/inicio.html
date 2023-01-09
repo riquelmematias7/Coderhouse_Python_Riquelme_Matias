@@ -11,22 +11,24 @@
     <title>Python 2022 - Riquelme Matías</title>
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
-    <link href="static/blogapp/css/bootstrap.css" rel="stylesheet">
+    <link href="{% static 'blogapp/css/bootstrap.css' %}" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="static/blogapp/css/freelancer.css" rel="stylesheet">
+    <link href="{% static 'blogapp/css/freelancer.css' %}" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="static/blogapp/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="{% static 'blogapp/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 
 </head>
 
@@ -43,7 +45,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#page-top">Python - Blog</a>
+                <a class="navbar-brand" href="{% url 'home'%}">Home</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -62,16 +64,19 @@
                         <a href="#contact">Contact</a>
                     </li>
                     <li class="page-top">
-                        <a href="/blog/blogapp/templates/blogapp/messages.html">Messages</a>
+                        <a href="{% url 'messages'%}">Messages</a>
                     </li>
                     <li class="page-top">
-                        <a href="/blog/blogapp/templates/blogapp/register.html">Register</a>
+                        <a href="{% url 'register'%}">Register</a>
                     </li>
                     <li class="page-top">
-                        <a href="/blog/blogapp/templates/blogapp/login.html">Login</a>
+                        <a href="{% url 'login'%}">Login</a>
                     </li>
                     <li class="page-top">
-                        <a href="/blog/blogapp/templates/blogapp/logout.html">Logout</a>
+                        <a href="/admin/">Admin</a>
+                    </li>
+                    <li class="page-top">
+                        <a href="{% url 'logout'%}">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -85,7 +90,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <img class="img-responsive" src="static/blogapp/img/profile.png" alt="">
+                    <img class="img-responsive" src="{% static 'blogapp/img/profile.png' %}" alt="">
                     <div class="intro-text">
                         <span class="name">Riquelme Matías</span>
                         <hr class="star-light">
@@ -113,7 +118,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="static/blogapp/img/portfolio/cabin.png" class="img-responsive" alt="">
+                        <img src="{% static 'blogapp/img/portfolio/lacoste.png' %}" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -123,7 +128,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="static/blogapp/img/portfolio/cake.png" class="img-responsive" alt="">
+                        <img src="{% static 'blogapp/img/portfolio/risewell.png' %}" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -133,7 +138,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="static/blogapp/img/portfolio/circus.png" class="img-responsive" alt="">
+                        <img src="{% static 'blogapp/img/portfolio/adidas.png' %}" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -143,7 +148,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="static/blogapp/img/portfolio/game.png" class="img-responsive" alt="">
+                        <img src="{% static 'blogapp/img/portfolio/ysl.png' %}" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -153,7 +158,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="static/blogapp/img/portfolio/safe.png" class="img-responsive" alt="">
+                        <img src="{% static 'blogapp/img/portfolio/rosary.png' %}" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -163,7 +168,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="static/blogapp/img/portfolio/submarine.png" class="img-responsive" alt="">
+                        <img src="{% static 'blogapp/img/portfolio/natura.png' %}" class="img-responsive" alt="">
                     </a>
                 </div>
             </div>
@@ -188,8 +193,7 @@
                 </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <a href="https://docs.google.com/document/d/1oE8PTmPGap-7dKEa9XnqaD_Figie2BCHo8eLcNpp9sA/" class="btn btn-lg btn-outline">
-                         Rubrica de Evaluación
-                    </a>
+                        <i class="fa-brands fa-google-drive"></i> Rubrica de Evaluación</a>
                 </div>
             </div>
         </div>
@@ -263,16 +267,16 @@
                         <h3>Social Media</h3>
                         <ul class="list-inline">
                             <li>
-                                <a href="https://www.facebook.com/riquelmemat" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                                <a href="https://www.facebook.com/riquelmemat" class="btn-social btn-outline"><i class="fa-brands fa-facebook"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                                <a href="https://github.com/riquelmematias7" class="btn-social btn-outline"><i class="fa-brands fa-github"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                                <a href="https://www.instagram.com/riquelmematias7/" class="btn-social btn-outline"><i class="fa-brands fa-instagram"></i></a>
                             </li>
                             <li>
-                                <a href="https://www.linkedin.com/in/riquelmematias/" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                                <a href="https://www.linkedin.com/in/riquelmematias/" class="btn-social btn-outline"><i class="fa-brands fa-linkedin-in"></i></i></a>
                             </li>
                         </ul>
                     </div>
@@ -316,7 +320,7 @@
                         <div class="modal-body">
                             <h2>Lacoste</h2>
                             <hr class="star-primary">
-                            <img src="static/blogapp/img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
+                            <img src="{% static 'blogapp/img/portfolio/lacoste.png' %}" class="img-responsive img-centered" alt="">
                             <p>Sitio web, para empresa multinacional de prendas de vestir.</p>
                             <ul class="list-inline item-details">
                                 <li>Clients:
@@ -353,7 +357,7 @@
                         <div class="modal-body">
                             <h2>RiseWell</h2>
                             <hr class="star-primary">
-                            <img src="static/blogapp/img/portfolio/cake.png" class="img-responsive img-centered" alt="">
+                            <img src="{% static 'blogapp/img/portfolio/risewell.png' %}" class="img-responsive img-centered" alt="">
                             <p>Sitio web, para empresa americana dedicada a la fabricación de pasta de dientes.</p>
                             <ul class="list-inline item-details">
                                 <li>Client:
@@ -390,7 +394,7 @@
                         <div class="modal-body">
                             <h2>Adidas</h2>
                             <hr class="star-primary">
-                            <img src="static/blogapp/img/portfolio/circus.png" class="img-responsive img-centered" alt="">
+                            <img src="{% static 'blogapp/img/portfolio/adidas.png' %}" class="img-responsive img-centered" alt="">
                             <p>Sitio web, para empresa multinacional de prendas de vestir.</p>
                             <ul class="list-inline item-details">
                                 <li>Client:
@@ -427,7 +431,7 @@
                         <div class="modal-body">
                             <h2>YSL Saint Laurent</h2>
                             <hr class="star-primary">
-                            <img src="static/blogapp/img/portfolio/game.png" class="img-responsive img-centered" alt="">
+                            <img src="{% static 'blogapp/img/portfolio/ysl.png' %}" class="img-responsive img-centered" alt="">
                             <p>Sitio web, para empresa multinacional de prendas de vestir.</p>
                             <ul class="list-inline item-details">
                                 <li>Client:
@@ -464,7 +468,7 @@
                         <div class="modal-body">
                             <h2>ROSARY</h2>
                             <hr class="star-primary">
-                            <img src="static/blogapp/img/portfolio/safe.png" class="img-responsive img-centered" alt="">
+                            <img src="{% static 'blogapp/img/portfolio/rosary.png' %}" class="img-responsive img-centered" alt="">
                             <p>Sitio web, para empresa colombiana de joyeria.</p>
                             <ul class="list-inline item-details">
                                 <li>Client:
@@ -501,7 +505,7 @@
                         <div class="modal-body">
                             <h2>Natura</h2>
                             <hr class="star-primary">
-                            <img src="static/blogapp/img/portfolio/submarine.png" class="img-responsive img-centered" alt="">
+                            <img src="{% static 'blogapp/img/portfolio/natura.png' %}" class="img-responsive img-centered" alt="">
                             <p>Sitio web, para empresa argentina de cosmeticos.</p>
                             <ul class="list-inline item-details">
                                 <li>Client:
@@ -526,23 +530,22 @@
     </div>
 
     <!-- jQuery -->
-    <script src="static/blogapp/js/jquery.js"></script>
+    <script src="{% static 'blogapp/js/jquery.js' %}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="static/blogapp/js/bootstrap.min.js"></script>
+    <script src="{% static 'blogapp/js/bootstrap.min.js' %}"></script>
 
     <!-- Plugin JavaScript -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="static/blogapp/js/classie.js"></script>
-    <script src="static/blogapp/js/cbpAnimatedHeader.js"></script>
+    <script src="{% static 'blogapp/js/classie.js' %}"></script>
+    <script src="{% static 'blogapp/js/cbpAnimatedHeader.js' %}"></script>
 
     <!-- Contact Form JavaScript -->
-    <script src="static/blogapp/js/jqBootstrapValidation.js"></script>
-    <script src="static/blogapp/js/contact_me.js"></script>
+    <script src="{% static 'blogapp/js/jqBootstrapValidation.js' %}"></script>
+    <script src="{% static 'blogapp/js/contact_me.js' %}"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="static/blogapp/js/freelancer.js"></script>
-
+    <script src="{% static 'blogapp/js/freelancer.js' %}"></script>
 </body>
 
 </html>
